@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+
+    <title>
+        {% if title %} {{ title }} | Ceres®
+        {% else %} Ceres® {% endif %}
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/pace.css') }}"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600%7CRoboto:400" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='admin/vendors/material-icons/material-icons.css') }}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='admin/vendors/mono-social-icons/monosocialiconsfont.css') }}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='admin//vendors/feather-icons/feather.css') }}"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600%7CRoboto:400" rel="stylesheet"
+          type="text/css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}'
+            src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body class="body-bg-full error-page error-404" style="background-image: url({{ url_for('static', filename='pivot/pivot.png') }})">
+
+<div id="wrapper" class="wrapper">
+        <div class="content-wrapper">
+            <main class="main-wrapper">
+                <div class="page-title">
+                    <h1 class="color-white">404</h1>
+                </div>
+                <h3 class="mr-b-5 color-blue">Page Not Found!</h3>
+                <p class="mr-b-30 color-blue fs-18 fw-200 heading-font-family">Sorry! the page you are looking for doesn't exist.</p>
+                <a href="javascript: history.back();" class="btn btn-outline-primary btn-rounded btn-block fw-700 text-uppercase">Go Back</a>
+            </main>
+        </div>
+        <!-- .content-wrapper -->
+    </div>
+    <!-- .wrapper -->
+
+
+</div>
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script src="{{ url_for('static', filename='admin/js/bootstrap.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.2/countUp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/1.1.1/mithril.js"></script>
+
+    <script src="{{ url_for('static', filename='admin/vendors/theme-widgets/widgets.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/vendors/theme-widgets/widgets.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="{{ url_for('static', filename='admin/js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/js/custom.js') }}"></script>
+
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "landing/base.html" %}
+
+{% block app_content %}
+    <div id="top-content" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="main-slider">
+                        <div class="slide">
+                            <div class="noti-holder">
+                                <a href="#">
+                                    <div class="noti">
+                                        <span class="badge">Pivot® Hub</span><span class="text">Smart Water Billing.</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="big-title">IoT <span>Smart Water Billing,</span><br>anywhere, anytime.</div>
+                            <p>IoT Smart water billing for real time water billing and monitoring .</p>
+                            <div class="btn-holder">
+                                <a href="{{ url_for('auth.register') }}" class="ybtn ybtn-white ybtn-shadow">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img class="header-graphic" src="images/graphic1.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

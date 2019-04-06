@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <main class="main-wrapper clearfix">
+
+        <!-- =================================== -->
+        <!-- Different data widgets ============ -->
+        <!-- =================================== -->
+        <div class="widget-list row">
+            <!-- /.widget-holder -->
+            <div class="col-md-2">
+                <!-- /.widget-holder -->
+                <div class="widget-holder widget-sm widget-border-radius">
+                    <div class="widget-bg">
+                        <div class="widget-heading"><span
+                                class="widget-title my-0 fs-12 fw-600">{{ _('My Crops') }}</span> <i
+                                class="widget-heading-icon feather feather-anchor"></i>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="counter-w-info">
+                                <div class="counter-title">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div data-toggle="circle-progress" data-start-angle="30" data-thickness="6"
+                                             data-size="50" data-value="0.58" data-line-cap="round"
+                                             data-empty-fill="#E2E2E2"
+                                             data-fill="{&quot;gradient&quot;: [&quot;#40E4C2&quot;, &quot;#0087FF&quot;], &quot;gradientAngle&quot;: -90}"></div>
+                                        <span class="counter ml-3 ml-0-rtl mr-3-rtl fs-42"
+                                              id="counter-3">{{ _(current_user.crops.count()) }}</span>
+                                    </div>
+                                    <!-- /.d-flex -->
+                                </div>
+                                <!-- /.counter-title -->
+                                <div class="counter-info text-center mt-2 mb-3"><span class="badge bg-success fs-13"><i
+                                        class="feather feather-arrow-up"></i>{{ _('Total Crops') }}</span>
+                                </div>
+                                <!-- /.counter-info -->
+                            </div>
+                            <!-- /.counter-w-info -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+                <!-- /.widget-holder -->
+            </div>
+            <div class="col-md-2">
+                <!-- /.widget-holder -->
+                <div class="widget-holder widget-sm widget-border-radius">
+                    <div class="widget-bg">
+                        <div class="widget-heading"><span
+                                class="widget-title my-0 fs-12 fw-600">{{ _('My Posts') }}</span> <i
+                                class="widget-heading-icon feather feather-anchor"></i>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="counter-w-info">
+                                <div class="counter-title">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div data-toggle="circle-progress" data-start-angle="30" data-thickness="6"
+                                             data-size="50" data-value="0.58" data-line-cap="round"
+                                             data-empty-fill="#E2E2E2"
+                                             data-fill="{&quot;gradient&quot;: [&quot;#40E4C2&quot;, &quot;#0087FF&quot;], &quot;gradientAngle&quot;: -90}"></div>
+                                        <span class="counter ml-3 ml-0-rtl mr-3-rtl fs-42"
+                                              id="counter-3">{{ _(current_user.posts.count()) }}</span>
+                                    </div>
+                                    <!-- /.d-flex -->
+                                </div>
+                                <!-- /.counter-title -->
+                                <div class="counter-info text-center mt-2 mb-3"><span class="badge bg-success fs-13"><i
+                                        class="feather feather-arrow-up"></i>{{ _('Total Post') }}</span>
+                                </div>
+                                <!-- /.counter-info -->
+                            </div>
+                            <!-- /.counter-w-info -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+                <!-- /.widget-holder -->
+            </div>
+            <div class="col-md-2">
+                <!-- /.widget-holder -->
+                <div class="widget-holder widget-sm widget-border-radius">
+                    <div class="widget-bg">
+                        <div class="widget-heading"><span
+                                class="widget-title my-0 fs-12 fw-600">{{ _('Temperature') }}</span> <i
+                                class="widget-heading-icon feather feather-anchor"></i>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="counter-w-info">
+                                <div class="counter-title">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div data-toggle="circle-progress" data-start-angle="30" data-thickness="6"
+                                             data-size="50" data-value="0.58" data-line-cap="round"
+                                             data-empty-fill="#E2E2E2"
+                                             data-fill="{&quot;gradient&quot;: [&quot;#40E4C2&quot;, &quot;#0087FF&quot;], &quot;gradientAngle&quot;: -90}"></div>
+                                        <span class="counter ml-3 ml-0-rtl mr-3-rtl fs-42"
+                                              id="counter-3">{{ _(current_user.posts.count()) }}</span>
+                                    </div>
+                                    <!-- /.d-flex -->
+                                </div>
+                                <!-- /.counter-title -->
+                                <div class="counter-info text-center mt-2 mb-3"><span class="badge bg-blue fs-13"><i
+                                        class="feather feather-arrow-up"></i>{{ _('Current Temperature') }}</span>
+                                </div>
+                                <!-- /.counter-info -->
+                            </div>
+                            <!-- /.counter-w-info -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+                <!-- /.widget-holder -->
+            </div>
+            <div class="col-md-2">
+                <!-- /.widget-holder -->
+                <div class="widget-holder widget-sm widget-border-radius">
+                    <div class="widget-bg">
+                        <div class="widget-heading"><span
+                                class="widget-title my-0 fs-12 fw-600">{{ _('Humidity') }}</span> <i
+                                class="widget-heading-icon feather feather-anchor"></i>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="counter-w-info">
+                                <div class="counter-title">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div data-toggle="circle-progress" data-start-angle="30" data-thickness="6"
+                                             data-size="50" data-value="0.58" data-line-cap="round"
+                                             data-empty-fill="#E2E2E2"
+                                             data-fill="{&quot;gradient&quot;: [&quot;#40E4C2&quot;, &quot;#0087FF&quot;], &quot;gradientAngle&quot;: -90}"></div>
+                                        <span class="counter ml-3 ml-0-rtl mr-3-rtl fs-42"
+                                              id="counter-3">{{ _(current_user.posts.count()) }}</span>
+                                    </div>
+                                    <!-- /.d-flex -->
+                                </div>
+                                <!-- /.counter-title -->
+                                <div class="counter-info text-center mt-2 mb-3"><span
+                                        class="badge bg-blue-dark fs-13"><i
+                                        class="feather feather-arrow-up"></i>{{ _('Current Humidity') }}</span>
+                                </div>
+                                <!-- /.counter-info -->
+                            </div>
+                            <!-- /.counter-w-info -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+                <!-- /.widget-holder -->
+            </div>
+        </div>
+        <!-- /.widget-list -->
+        <hr/>
+        <div class="widget-list row">
+            {% if posts | length > 0 %}
+                <div class="widget-holder widget-full-height widget-flex col-lg-6">
+                    <div class="widget-bg">
+                        <div class="widget-heading widget-heading-empty-border">
+                            <h5 class="widget-title">Latest Posts</h5>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="widget-latest-posts-2">
+                                <article class="post post-gallery">
+                                    <div class="gallery lightbox-gallery row" data-toggle="lightbox-gallery"
+                                         data-type="image">
+                                        <div class="col-6">
+                                            <a href="./assets/demo/carousel/carousel-1.jpg"
+                                               class="post-img lightbox d-block mr-b-5">
+                                                <img src="./assets/demo/carousel/carousel-1-thumb.jpg"
+                                                     alt="A book is a dream that you hold in your hands"/>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-6 -->
+                                        <div class="col-6">
+                                            <a href="./assets/demo/carousel/carousel-2.jpg"
+                                               class="post-img lightbox d-block mr-b-5">
+                                                <img src="./assets/demo/carousel/carousel-2-thumb.jpg"
+                                                     alt="A book is a dream that you hold in your hands"/>
+                                            </a>
+                                            <a href="./assets/demo/carousel/carousel-3.jpg"
+                                               class="post-img lightbox d-block mr-b-5">
+                                                <img src="./assets/demo/carousel/carousel-3-thumb.jpg"
+                                                     alt="A book is a dream that you hold in your hands"/>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-6 -->
+                                    </div>
+                                    <!-- /.gallery -->
+                                    <div class="post-details">
+                                        <h4 class="post-title"><a href="#" tabindex="0">You can never be overdressed or
+                                            overeducated</a></h4>
+                                        <p class="headings-font-family">Research shows that there is only half as much
+                                            variation in student achievement between schools there is among
+                                            classrooms...</p>
+                                        <div class="post-links">
+                                            <figure>
+                                                <a href="#">
+                                                    <img class="rounded-circle" src="./assets/demo/users/user1.jpg"
+                                                         alt="User 1"/>
+                                                </a>
+                                            </figure>
+                                            <ul>
+                                                <li><a href="#"><i class="feather feather-eye"></i> 684</a>
+                                                </li>
+                                                <li><a href="#"><i class="feather feather-thumbs-up"></i> 53</a>
+                                                </li>
+                                                <li><a href="#"><i class="feather feather-eye"></i> 21</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- /.post-links -->
+                                    </div>
+                                    <!-- /.post-details -->
+                                </article>
+                            </div>
+                            <!-- /.widget-latest-posts -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+            {% else %}
+                <div class="widget-holder widget-full-height widget-flex col-lg-6">
+                    <div class="widget-bg">
+                        <div class="widget-heading widget-heading-empty-border">
+                            <h5 class="widget-title">{{ _('Latest Post') }}</h5>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="widget-latest-posts-2">
+                                <article class="post post-gallery">
+                                    <div class="gallery lightbox-gallery row" data-toggle="lightbox-gallery"
+                                         data-type="image">
+                                        <div class="col-6">
+                                            <a href=""
+                                               class="post-img lightbox d-block mr-b-5">
+                                                <img src="{{ url_for('static', filename='pivot/pivot-5.png') }}"
+                                                     alt="A book is a dream that you hold in your hands"/>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <!-- /.gallery -->
+                                    <div class="post-details">
+                                        <h4 class="post-title"><a href="#" tabindex="0">{{ _('No Post Available') }}</a></h4>
+                                        <p class="headings-font-family">{{ _('Sorry, no post has been posted so far') }}</p>
+
+                                        <!-- /.post-links -->
+                                    </div>
+                                    <!-- /.post-details -->
+                                </article>
+                            </div>
+                            <!-- /.widget-latest-posts -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+            {% endif %}
+            <!-- /.widget-holder -->
+            <div class="widget-holder widget-full-height widget-flex col-lg-6">
+                <div class="widget-bg">
+                    <div class="widget-heading widget-heading-border">
+                        <h5 class="widget-title">{{ _('Weather Forcast') }}</h5>
+                        <div class="widget-actions"><a href="#"
+                                                       class="btn btn-xs btn-success btn-rounded fw-bold px-3 cursor-pointer heading-font-family text-uppercase">View
+                            {{ _('More') }}</a>
+                        </div>
+                        <!-- /.widget-actions -->
+                    </div>
+                    <!-- /.widget-heading -->
+                    <div class="widget-body">
+                        <div class="widget-todo">
+                            <div class="single media"><i
+                                    class="single-icon feather feather-circle color-color-scheme"></i>
+                                <div class="media-body">
+                                    <div class="text-muted heading-font-family fw-500">09:30 - 10:30</div>
+                                    <h6 class="single-title">Make an appointment with Doctor</h6>
+                                    <p class="fw-400 fs-13 mb-0 text-muted"><i class="feather feather-map-pin mr-2"></i>
+                                        Dr. Schoeb's Spine Center</p>
+                                </div>
+                                <!-- /.media-body -->
+                                <div class="dropdown align-self-center"><a href="#" class="dropdown-toggle"
+                                                                           data-toggle="dropdown"><i
+                                        class="feather feather-more-vertical"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i
+                                            class="list-icon feather feather-check"></i> {{ _('Details') }}</a>
+                                        <div class="dropdown-divider"></div>
+
+                                    </div>
+                                    <!-- /.dropdown-menu -->
+                                </div>
+                                <!-- /.dropdown -->
+                            </div>
+                            <!-- /.single -->
+                            <!-- /.single -->
+
+                            <!-- /.single --> <a href="#" class="add-btn btn btn-circle btn-md fs-20 btn-primary"><i
+                                class="feather feather-plus"></i></a>
+                        </div>
+                        <!-- /.widget-todo -->
+                    </div>
+                    <!-- /.widget-body -->
+                </div>
+                <!-- /.widget-bg -->
+            </div>
+            <!-- /.widget-holder -->
+        </div>
+        <!-- /.widget-list -->
+    </main>
+{% endblock %}

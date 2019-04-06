@@ -1,0 +1,3 @@
+{
+  "auth_test.py::AuthTest::test_authenticate_token": true
+}

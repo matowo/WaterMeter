@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+
+     <div class="container-fluid">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-icon alert-info border-info alert-dismissible fade show" role="alert"  style="margin-top: 40px">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                                    </button> <i class="material-icons list-icon">info</i>
+                            <strong>
+                                {{ message }}
+                            </strong>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+    <main class="main-wrapper clearfix">
+
+        <!-- =================================== -->
+        <!-- Different data widgets ============ -->
+        <!-- =================================== -->
+        <div class="widget-list row" style="margin-top: 10px">
+            <!-- /.widget-holder -->
+            <div class="col-md-4">
+                <!-- /.widget-holder -->
+                <div class="widget-holder widget-sm widget-border-radius">
+                    <div class="widget-bg">
+                        <div class="widget-heading"><span
+                                class="widget-title my-0 fs-12 fw-600">{{ _('Balance') }}</span> <i
+                                class="widget-heading-icon feather feather-anchor"></i>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="counter-w-info">
+                                <div class="counter-title">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div data-toggle="circle-progress" data-start-angle="30" data-thickness="6"
+                                             data-size="50" data-value="0.58" data-line-cap="round"
+                                             data-empty-fill="#E2E2E2"
+                                             data-fill="{&quot;gradient&quot;: [&quot;#40E4C2&quot;, &quot;#0087FF&quot;], &quot;gradientAngle&quot;: -40}"></div>
+                                        <span class="counter ml-3 ml-0-rtl mr-3-rtl fs-42"
+                                              id="counter-3">0 </span> TZS
+                                    </div>
+                                    <!-- /.d-flex -->
+                                </div>
+                                <!-- /.counter-title -->
+                                <div class="counter-info text-center mt-2 mb-3"><span class="badge bg-success fs-13"><i
+                                        class="feather feather-arrow-up"></i>{{ _('Available Balance') }}</span>
+                                </div>
+                                <!-- /.counter-info -->
+                            </div>
+                            <!-- /.counter-w-info -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+                <!-- /.widget-holder -->
+            </div>
+            <div class="col-md-4">
+                <!-- /.widget-holder -->
+                <div class="widget-holder widget-sm widget-border-radius">
+                    <div class="widget-bg">
+                        <div class="widget-heading"><span
+                                class="widget-title my-0 fs-12 fw-600">{{ _('Current Water Usage') }}</span> <i
+                                class="widget-heading-icon feather feather-anchor"></i>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="counter-w-info">
+                                <div class="counter-title">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div data-toggle="circle-progress" data-start-angle="30" data-thickness="6"
+                                             data-size="50" data-value="0.58" data-line-cap="round"
+                                             data-empty-fill="#E2E2E2"
+                                             data-fill="{&quot;gradient&quot;: [&quot;#40E4C2&quot;, &quot;#0087FF&quot;], &quot;gradientAngle&quot;: -90}"></div>
+                                        <span class="counter ml-3 ml-0-rtl mr-3-rtl fs-42"
+                                              id="counter-3">0 </span> (Litres/Meter)
+                                    </div>
+                                    <!-- /.d-flex -->
+                                </div>
+                                <!-- /.counter-title -->
+                                <div class="counter-info text-center mt-2 mb-3"><span class="badge bg-success fs-13"><i
+                                        class="feather feather-arrow-up"></i>{{ _('Flow rate') }}</span>
+                                </div>
+                                <!-- /.counter-info -->
+                            </div>
+                            <!-- /.counter-w-info -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+                <!-- /.widget-holder -->
+            </div>
+            <div class="col-md-4">
+                <!-- /.widget-holder -->
+                <div class="widget-holder widget-sm widget-border-radius">
+                    <div class="widget-bg">
+                        <div class="widget-heading"><span
+                                class="widget-title my-0 fs-12 fw-600">{{ _('Available Units') }}</span> <i
+                                class="widget-heading-icon feather feather-anchor"></i>
+                        </div>
+                        <!-- /.widget-heading -->
+                        <div class="widget-body">
+                            <div class="counter-w-info">
+                                <div class="counter-title">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div data-toggle="circle-progress" data-start-angle="30" data-thickness="6"
+                                             data-size="50" data-value="0.58" data-line-cap="round"
+                                             data-empty-fill="#E2E2E2"
+                                             data-fill="{&quot;gradient&quot;: [&quot;#40E4C2&quot;, &quot;#0087FF&quot;], &quot;gradientAngle&quot;: -90}"></div>
+                                        <span class="counter ml-3 ml-0-rtl mr-3-rtl fs-42"
+                                              id="counter-3">0 </span> (Units)
+                                    </div>
+                                    <!-- /.d-flex -->
+                                </div>
+                                <!-- /.counter-title -->
+                                <div class="counter-info text-center mt-2 mb-3"><span class="badge bg-primary fs-13"><i
+                                        class="feather feather-arrow-up"></i>{{ _('Water Units') }}</span>
+                                </div>
+                                <!-- /.counter-info -->
+                            </div>
+                            <!-- /.counter-w-info -->
+                        </div>
+                        <!-- /.widget-body -->
+                    </div>
+                    <!-- /.widget-bg -->
+                </div>
+                <!-- /.widget-holder -->
+            </div>
+
+        </div>
+        <!-- /.widget-list -->
+        <hr/>
+        <div class="widget-list row">
+             <!-- /.widget-holder -->
+                    <div class="col-md-12 widget-holder">
+                        <div class="widget-bg p-0">
+                            <div class="widget-body chart-widget clearfix">
+                                <div class="card border-0">
+                                    <div class="card-header border-0">
+                                        <h5 class="sub-heading-font-family mt-3">Water and Units Usage</h5><span class="sub-heading-font-family mb-3">From 5th April, 2019</span>
+                                        <div style="height: 350px" class="my-4 pr-3">
+                                            <canvas id="chartJsBar"></canvas>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.widget-body -->
+                        </div>
+                        <!-- /.widget-bg -->
+                    </div>
+        </div>
+        <!-- /.widget-list -->
+    </main>
+{% endblock %}
