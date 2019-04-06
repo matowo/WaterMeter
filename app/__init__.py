@@ -22,7 +22,7 @@ from flask_mqtt import Mqtt
 from flask_ckeditor import CKEditor
 from flask_wtf import CSRFProtect
 from flask_marshmallow import Marshmallow
-import flask_excel as excel
+
 
 
 db = SQLAlchemy()
@@ -77,7 +77,7 @@ def create_app(config_class=Config):
     ckeditor.init_app(app)
     csrf.init_app(app)
     marshmallow.init_app(app)
-    excel.init_excel(app)
+
 
     # Celery
     celery.conf.update(app.config)
