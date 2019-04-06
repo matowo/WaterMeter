@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
 
     <title>
-       {% if title %} {{ title }} | Pivot® Water Meter
+        {% if title %} {{ title }} | Pivot® Water Meter
         {% else %} Pivot® Water Meter{% endif %}
     </title>
 
@@ -100,18 +100,19 @@
                             <ul class="card-body list-unstyled dropdown-list-group">
                                 {% if current_user.notifications.count() > 0 %}
                                     <li><a href="#" class="media"><span class="d-flex thumb-xs user--online"><img
-                                        src="./assets/demo/users/user3.jpg" class="rounded-circle" alt=""/> </span><span
-                                        class="media-body"><span
-                                        class="heading-font-family media-heading">Steve Smith</span> <span
-                                        class="media-content">I slowly updated projects</span></span></a>
-                                </li>
+                                            src="./assets/demo/users/user3.jpg" class="rounded-circle"
+                                            alt=""/> </span><span
+                                            class="media-body"><span
+                                            class="heading-font-family media-heading">Steve Smith</span> <span
+                                            class="media-content">I slowly updated projects</span></span></a>
+                                    </li>
                                 {% else %}
-                                    <li><a href="#" class="media"><span class="d-flex"><i class="material-icons list-icon">event_available</i> </span><span
-                                        class="media-body"><span class="-heading-font-family media-heading"></span> <span
-                                        class="media-content">No Notification</span></span></a>
-                                </li>
+                                    <li><a href="#" class="media"><span class="d-flex"><i
+                                            class="material-icons list-icon">event_available</i> </span><span
+                                            class="media-body"><span class="-heading-font-family media-heading"></span> <span
+                                            class="media-content">No Notification</span></span></a>
+                                    </li>
                                 {% endif %}
-
 
 
                             </ul>
@@ -133,7 +134,8 @@
             <!-- /.navbar-right -->
             <!-- User Image with Dropdown -->
             <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="{{ url_for('main.user', token=current_user.secure_token) }}" class="dropdown-toggle dropdown-toggle-user ripple"
+                <li class="dropdown"><a href="{{ url_for('main.user', token=current_user.secure_token) }}"
+                                        class="dropdown-toggle dropdown-toggle-user ripple"
                                         data-toggle="dropdown"><span class="avatar thumb-xs2"><img
                         src="{{ current_user.avatar(size=38) }}" class="rounded-circle" alt=""/> <i
                         class="feather feather-chevron-down list-icon"></i></span></a>
@@ -155,7 +157,8 @@
                                 </li>
                                 <li><a href="#"><span><span class="align-middle">Check Inbox</span></span></a>
                                 </li>
-                                <li><a href="{{ url_for('auth.logout') }}"><span><span class="align-middle">Sign Out</span></span></a>
+                                <li><a href="{{ url_for('auth.logout') }}"><span><span
+                                        class="align-middle">Sign Out</span></span></a>
                                 </li>
                             </ul>
                             <!-- /.card-body -->
@@ -174,44 +177,65 @@
 
     <div class="content-wrapper">
         <!-- SIDEBAR -->
-    {% if current_user.is_authenticated %}
-        <aside class="site-sidebar clearfix">
-            <nav class="sidebar-nav">
-                <ul class="nav in side-menu">
-                    <li class="current-page menu-item-has-children"><a href="{{ url_for('main.index') }}"><i
-                            class="list-icon feather feather-command"></i> <span class="hide-menu">{{ _('Home') }}</span></a>
-                    </li>
+        {% if current_user.is_authenticated %}
+            <aside class="site-sidebar clearfix">
+                <nav class="sidebar-nav">
+                    <ul class="nav in side-menu">
+                        <li class="current-page menu-item-has-children"><a href="{{ url_for('main.index') }}"><i
+                                class="list-icon feather feather-command"></i> <span
+                                class="hide-menu">{{ _('Home') }}</span></a>
+                        </li>
 
-                    <li class="menu-item-has-children"><a href="javascript:void(0);"><i
-                            class="list-icon feather feather-briefcase"></i> <span class="hide-menu">{{ _('Meter') }}</span></a>
-                        <ul class="list-unstyled sub-menu">
-                            <li><a href="">{{ _('Meter Details') }}</a>
-                            </li>
-                            <li><a href="">{{ _('Meter Usage') }}</a>
-                            </li>
+                        <li class="menu-item-has-children"><a href="javascript:void(0);"><i
+                                class="list-icon feather feather-briefcase"></i> <span
+                                class="hide-menu">{{ _('Meter') }}</span></a>
+                            <ul class="list-unstyled sub-menu">
+                                <li><a href="">{{ _('Meter Details') }}</a>
+                                </li>
+                                <li><a href="">{{ _('Meter Usage') }}</a>
+                                </li>
 
-                        </ul>
-                    </li>
+                            </ul>
+                        </li>
 
-                    <li class="menu-item-has-children"><a href="javascript:void(0);"><i
-                            class="list-icon feather feather-briefcase"></i> <span class="hide-menu">{{ _('Billing') }}</span></a>
-                        <ul class="list-unstyled sub-menu">
-                            <li><a href="">{{ _('Add Billing ') }}</a>
-                            </li>
-                            <li><a href="">{{ _('Balance') }}</a>
-                            </li>
+                        <li class="menu-item-has-children"><a href="javascript:void(0);"><i
+                                class="list-icon feather feather-briefcase"></i> <span
+                                class="hide-menu">{{ _('Billing') }}</span></a>
+                            <ul class="list-unstyled sub-menu">
+                                <li><a href="">{{ _('Add Billing ') }}</a>
+                                </li>
+                                <li><a href="">{{ _('Balance') }}</a>
+                                </li>
 
-                        </ul>
-                    </li>
+                            </ul>
+                        </li>
 
 
+                    </ul>
+                    <!-- /.side-menu -->
+                </nav>
+                <!-- /.sidebar-nav -->
+            </aside>
+        {% endif %}
 
-                </ul>
-                <!-- /.side-menu -->
-            </nav>
-            <!-- /.sidebar-nav -->
-        </aside>
-    {% endif %}
+        <div class="container-fluid">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-icon alert-info border-info alert-dismissible fade show" role="alert"
+                             style="margin-top: 40px">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">×</span>
+                            </button>
+                            <i class="material-icons list-icon">info</i>
+                            <strong>
+                                {{ message }}
+                            </strong>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         {% block app_content %}{% endblock %}
 
         <!-- RIGHT SIDEBAR -->

@@ -5,8 +5,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hell0Wor79'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
-    # SQLALCHEMY_DATABASE_URI ='postgres://roumyzhgvwshpt:1567b0eb61ae2669682813a4d60631f9bb8508dd9cf56dcfe6ef78f4b2211150@ec2-54-83-49-109.compute-1.amazonaws.com:5432/d612u9uds6qhie'
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_DATABASE_URI ='postgres://nzedwwaiipwfjr:a55de8f65a6887a38d8f9ac5c418b5afa5e3c9fb8ea78c2ee9098d7a3c00c27e@ec2-23-21-106-241.compute-1.amazonaws.com:5432/d6qcn6gdhgmknc'
 
     # SQLALCHEMY_DATABASE_URI = 'mysql://root:@localhost/pivot'
 
