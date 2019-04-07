@@ -1,6 +1,6 @@
 from flask import request
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DateTimeField, SelectField
+from wtforms import StringField, SubmitField, DateTimeField, SelectField,TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Length, Regexp
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
@@ -31,12 +31,17 @@ class PhoneForm(FlaskForm):
     submit = SubmitField(_l('Update Phone'))
 
 
-class PostBlog(FlaskForm):
-    blog_title = StringField('Title')
-    blog_cover = FileField('', validators=[FileRequired(),
-                                                 FileAllowed(['jpg', 'png', 'gif', 'jpeg', 'exif', 'tiff', 'bmp',
-                                                              'img'],
-                                                             'Images Video Only')],
-                                 render_kw={"placeholder": "Blog Cover"})
-    body = CKEditorField('Blog post')
-    submit = SubmitField('Submit')
+class BillingAddressForm(FlaskForm):
+    address_line = TextAreaField(_('Address Line 1*'), validators=[DataRequired()], render_kw={'placeholder':"Address Line 1"})
+    address_line_1 = TextAreaField(_('Address Line 2'), validators=[DataRequired()], render_kw={'placeholder': "Address Line 2"})
+    submit = SubmitField(_l('Accept Changes'))
+
+
+
+class EditBillingAddressForm(FlaskForm):
+    address_line = TextAreaField(_('Address Line 1*'), validators=[DataRequired()],
+                               render_kw={'placeholder': "Address Line 1"})
+    address_line_1 = TextAreaField(_('Address Line 2'), validators=[DataRequired()],
+                                 render_kw={'placeholder': "Address Line 2"})
+
+    submit = SubmitField(_l('Accept Changes'))

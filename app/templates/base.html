@@ -151,7 +151,7 @@
                                 </a>
                             </header>
                             <ul class="list-unstyled card-body">
-                                <li><a href="#"><span><span class="align-middle">Manage Accounts</span></span></a>
+                                <li><a href="{{ url_for('main.user', token=current_user.secure_token) }}"><span><span class="align-middle">{{ _('Profile') }}</span></span></a>
                                 </li>
                                 <li><a href="#"><span><span class="align-middle">Change Password</span></span></a>
                                 </li>

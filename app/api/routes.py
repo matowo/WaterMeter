@@ -8,9 +8,24 @@ from flask import render_template, flash, redirect, url_for, request, \
 from flask_babel import _, get_locale
 from flask_login import current_user, login_required
 from app import db, marshmallow
-from app.models import User
+from app.models import User, UserSchema
 from app.api import bp
-from app.tasks import get_model_json
-import json
 
 
+
+@bp.route('/user-data/<string:token>', methods=['GET'])
+def user_data(token):
+    pass
+
+@bp.route('/users', methods=['GET'])
+def users():
+    users = User.query.all()
+    user_schema = UserSchema()
+    user_schema = UserSchema(many=True)
+    result = user_schema.dump(users)
+    return jsonify(result.data)
+
+
+@bp.route('/update-data/<string:token>', methods=['POST'])
+def update_data(token):
+    pass

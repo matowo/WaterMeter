@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+
+{% block app_content %}
+    <div class="mr-tb-30" ></div>
+    <main class="main-wrapper clearfix">
+
+            <!-- /.page-title -->
+            <!-- =================================== -->
+            <!-- Different data widgets ============ -->
+            <!-- =================================== -->
+            <div class="widget-list">
+                <div class="row">
+                    <!-- User Summary -->
+                    <div class="col-12 col-md-4 widget-holder widget-full-content">
+                        <div class="widget-bg">
+                            <div class="widget-body clearfix">
+                                <div class="widget-user-profile">
+                                    <figure class="profile-wall-img">
+                                        <img src="{{ url_for('static', filename='pivot/pivot.png') }}" alt="{{ _(user.username) }}" />
+                                    </figure>
+                                    <div class="profile-body">
+                                        <figure class="profile-user-avatar thumb-md">
+                                            <img src="{{ user.avatar(size=50) }}" alt="{{ _(user.username) }}" />
+                                        </figure>
+                                        <h6 class="h3 profile-user-name">{{ _(user.username) }}</h6><small class="profile-user-address">{{ _('') }}</small>
+                                        <hr class="profile-seperator" />
+                                        <div class="profile-user-description mb-4">
+
+                                        </div>
+                                        <!-- /.profile-user-description -->
+                                        <div class="mb-5"><a href="" class="btn btn-outline-primary btn-rounded btn-lg px-5 border-thick text-uppercase mr-2 mr-0-rtl ml-2-rtl fw-700 fs-11 heading-font-family">Edit Profile</a>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.d-flex -->
+                                    <div class="row columns-border-bw border-top">
+                                        <div class="col-4 d-flex flex-column justify-content-center align-items-center py-4">
+                                            <h6 class="my-0"><span class="counter">{{ _('0') }}</span></h6><small>Balance</small>
+                                        </div>
+
+                                        <div class="col-4 d-flex flex-column justify-content-center align-items-center py-4">
+                                            <h6 class="my-0"><span class="counter">{{ _('0') }}</span></h6><small>Meters</small>
+                                        </div>
+
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.widget-user-profile -->
+                            </div>
+                            <!-- /.widget-body -->
+                        </div>
+                        <!-- /.widget-bg -->
+                    </div>
+                    <!-- /.widget-holder -->
+                    <!-- Tabs Content -->
+                    <div class="col-12 col-md-8 mr-b-30">
+                        <ul class="nav nav-tabs contact-details-tab">
+                            <li class="nav-item"><a href="#activity-tab-bordered-1" class="nav-link active" data-toggle="tab">Meter</a>
+                            </li>
+                            <li class="nav-item"><a href="#profile-tab-bordered-1" class="nav-link" data-toggle="tab">Logs</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="activity-tab-bordered-1">
+                                <div class="widget-user-activities">
+
+
+
+                                </div>
+                                <!-- /.widget-user-activities -->
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div role="tabpanel" class="tab-pane" id="profile-tab-bordered-1">
+                                <div class="contact-details-profile">
+                                </div>
+                                <!-- /.contact-details-profile -->
+                                <!-- /.row -->
+                            </div>
+                            <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                    </div>
+                    <!-- /.col-sm-8 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.widget-list -->
+        </main>
+{% endblock %}

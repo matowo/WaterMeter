@@ -41,8 +41,9 @@ class User(UserMixin, db.Model):
     phone_number_confirmed = db.Column(db.Boolean, default=False)
 
     notifications = db.relationship('Notification', backref='user', lazy='dynamic')
-
-
+    meters = db.relationship('Meter', backref='user', lazy='dynamic')
+    address = db.relationship('BillingAddress', backref='user', lazy='dynamic')
+    balance = db.relationship('Balance', backref='user', lazy='dynamic')
 
 
 
@@ -60,9 +61,51 @@ class User(UserMixin, db.Model):
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
 
-class Sensor(): pass
+class BillingAddress(db.Model):
+    __tablename__ = 'billing'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    secure_token = db.Column(db.String(128), index=True)
+    address_1 = db.Column(db.Text)
+    address_2 = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
-class Reading(): pass
+class Balance(db.Model):
+    __tablename__ = 'balance'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    secure_token = db.Column(db.String(128), index=True)
+    balance = db.Column(db.Float)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+class Meter(db.Model):
+    __tablename__ = 'meters'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    secure_token = db.Column(db.String(128), index=True)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    sensors = db.relationship('Sensor', backref='meter', lazy='dynamic')
+
+class Sensor(db.Model):
+    __tablename__ = 'sensors'
+    id = db.Column(db.Integer, primary_key=True)
+    meter_id = db.Column(db.Integer, db.ForeignKey('meters.id'))
+    secure_token = db.Column(db.String(128), index=True)
+    sensor_type = db.Column(db.String(128), index=True)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    readings = db.relationship('Reading', backref='sensor', lazy='dynamic')
+
+class Reading(db.Model):
+    __tablename__ = 'readings'
+    id = db.Column(db.Integer, primary_key=True)
+    meter_id = db.Column(db.Integer, db.ForeignKey('sensors.id'))
+    secure_token = db.Column(db.String(128), index=True)
+    value = db.String(db.String(128))
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
 
 
 class Location(db.Model):
@@ -108,7 +151,11 @@ def load_user(id):
 
 
 """
-#--- Crop Management Database Model --- #
+#--- User Schema --- #
 """
+
+class UserSchema(marshmallow.Schema):
+    class Meta:
+        model = User
 
 

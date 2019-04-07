@@ -11,7 +11,7 @@ from flask_ckeditor import upload_fail, upload_success
 from flask_login import current_user, login_required
 from app import db
 from app.main import bp
-from app.main.forms import PostBlog
+from app.main.forms import BillingAddressForm, EditBillingAddressForm
 from app.models import User
 from .. import mqtt
 from .. import socketio
@@ -37,5 +37,24 @@ def index():
 @bp.route('/user/<string:token>')
 @login_required
 def user(token):
+    user = User.query.filter_by(secure_token=token).first()
+    if user is None: abort(404)
+    return render_template('main/user.html', title=_(user.username), user=user)
+
+@bp.route('/pay')
+@login_required
+def pay():
     pass
+
+@bp.route('/add-billing')
+@login_required
+def add_billing():
+    form = EditBillingAddressForm()
+    return render_template('main/add_billing.html', title=_('Add Billing Address'), form=form)
+
+@bp.route('/edit-billing')
+@login_required
+def edit_billing():
+    pass
+
 
