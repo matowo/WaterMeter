@@ -154,8 +154,9 @@ def load_user(id):
 #--- User Schema --- #
 """
 
-class UserSchema(marshmallow.Schema):
+class UserSchema(marshmallow.ModelSchema):
     class Meta:
         model = User
+        sqla_session = db.session
 
 

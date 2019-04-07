@@ -20,7 +20,6 @@ def user_data(token):
 @bp.route('/users', methods=['GET'])
 def users():
     users = User.query.all()
-    user_schema = UserSchema()
     user_schema = UserSchema(many=True)
     result = user_schema.dump(users)
     return jsonify(result.data)
