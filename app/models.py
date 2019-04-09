@@ -71,7 +71,7 @@ class User(UserMixin, db.Model):
         for meter in self.meters:
             dict = {
                 "id": meter.id,
-                "secure_token": meter.secure_token,
+                "meter_number": meter.secure_token,
             }
             data['meters'].append(dict)
 
