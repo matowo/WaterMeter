@@ -187,23 +187,16 @@
                                 class="hide-menu">{{ _('Home') }}</span></a>
                         </li>
 
-                        <li class="menu-item-has-children"><a href="javascript:void(0);"><i
-                                class="list-icon feather feather-briefcase"></i> <span
-                                class="hide-menu">{{ _('Meter') }}</span></a>
-                            <ul class="list-unstyled sub-menu">
-                                <li><a href="">{{ _('Meter Details') }}</a>
-                                </li>
-                                <li><a href="">{{ _('Meter Usage') }}</a>
-                                </li>
-
-                            </ul>
+                        <li class="current-page menu-item-has-children"><a href="{{ url_for('main.index') }}"><i
+                                class="list-icon feather feather-command"></i> <span
+                                class="hide-menu">{{ _('Meters') }}</span></a>
                         </li>
 
                         <li class="menu-item-has-children"><a href="javascript:void(0);"><i
                                 class="list-icon feather feather-briefcase"></i> <span
                                 class="hide-menu">{{ _('Billing') }}</span></a>
                             <ul class="list-unstyled sub-menu">
-                                <li><a href="">{{ _('Add Billing ') }}</a>
+                                <li><a href="{{  url_for('main.add_billing') }}">{{ _('Add Billing ') }}</a>
                                 </li>
                                 <li><a href="">{{ _('Balance') }}</a>
                                 </li>
