@@ -37,3 +37,4 @@ python_magic==0.4.15
 psycopg2==2.7.4
 gunicorn== 19.7.1
 flask-marshmallow==0.10.0
+marshmallow-sqlalchemy==0.13.2

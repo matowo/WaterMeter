@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <main class="main-wrapper clearfix container">
+
+   <div class="widget-list">
+                <div class="row">
+                    <div class="col-md-12 widget-holder">
+                        <div class="widget-bg">
+                            <div class="widget-heading clearfix">
+                                <h5>Available Meters</h5>
+                            </div>
+                            <!-- /.widget-heading -->
+                            <div class="widget-body clearfix">
+                                <table class="table table-striped table-responsive" data-toggle="datatables" data-plugin-options='{"searching": false}'>
+                                    <thead>
+                                        <tr>
+
+                                            <th>ID</th>
+                                            <th>Timestamp</th>
+                                            <th>Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% if meters.count() > 0 %}
+                                        {% for meter in meters %}
+                                            <tr>
+                                                <td>{{ _(meter.secure_token) }}</td>
+                                                <td>{{ moment(meter.timestamp).format('MMMM Do YYYY') }}, {{ moment(meter.timestamp).format('h:mm:ss a') }}</td>
+                                                <td>
+                                                    {% for balance in balances %}
+                                                        {{ balance.balance  }} TZS
+                                                    {% endfor %}
+
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <h4>No Meter Assigned To You</h4>
+                                    {% endif %}
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <!-- /.widget-body -->
+                        </div>
+                        <!-- /.widget-bg -->
+                    </div>
+                    <!-- /.widget-holder -->
+                </div>
+                <!-- /.row -->
+            </div>
+    </main>
+{% endblock %}
+

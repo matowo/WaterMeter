@@ -33,6 +33,7 @@
           rel="stylesheet" type="text/css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet"
           type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/style.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/') }}"/>
@@ -251,6 +252,7 @@
 
 {% block scripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {{ moment.include_moment() }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
     <script src="{{ url_for('static', filename='admin/js/bootstrap.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.js"></script>
@@ -267,7 +269,7 @@
 
     <script src="{{ url_for('static', filename='admin/vendors/theme-widgets/widgets.js') }}"></script>
     <script src="{{ url_for('static', filename='admin/vendors/theme-widgets/widgets.js') }}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="{{ url_for('static', filename='admin/js/theme.js') }}"></script>
     <script src="{{ url_for('static', filename='admin/js/custom.js') }}"></script>

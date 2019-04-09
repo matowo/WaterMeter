@@ -1,6 +1,6 @@
 import requests
 from requests.auth import HTTPBasicAuth
-from Web.config import Config
+from config import Config
 from base64 import b64encode
 
 

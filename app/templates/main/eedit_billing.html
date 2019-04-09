@@ -1,4 +1,34 @@
 {% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block app_content %}
+    <div class="widget-list">
+        <div class="row">
+
+            <!-- /.widget-holder -->
+            <div class="col-md-12 widget-holder">
+                <div class="widget-bg">
+                    <div class="widget-body clearfix">
+                        <h5 class="box-title mr-b-0">Edit Billing Address</h5>
+                        <div class="justify-content-center">
+                            <div class="login-center">
+
+                                <!-- /.navbar-header -->
+                                <div>
+                                    {{ wtf.quick_form(form) }}
+                                </div>
+                                <!-- /.form-material -->
+
+                            </div>
+                            <!-- /.login-center -->
+                        </div>
+                    </div>
+                    <!-- /.widget-body -->
+                </div>
+                <!-- /.widget-bg -->
+            </div>
+
+        </div>
+        <!-- /.row -->
+    </div>
 {% endblock %}

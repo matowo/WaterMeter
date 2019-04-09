@@ -34,7 +34,7 @@ class PhoneForm(FlaskForm):
 class BillingAddressForm(FlaskForm):
     address_line = TextAreaField(_('Address Line 1*'), validators=[DataRequired()], render_kw={'placeholder':"Address Line 1"})
     address_line_1 = TextAreaField(_('Address Line 2'), validators=[DataRequired()], render_kw={'placeholder': "Address Line 2"})
-    submit = SubmitField(_l('Accept Changes'))
+    accept = SubmitField(_l('Accept Changes'))
 
 
 
@@ -44,4 +44,4 @@ class EditBillingAddressForm(FlaskForm):
     address_line_1 = TextAreaField(_('Address Line 2'), validators=[DataRequired()],
                                  render_kw={'placeholder': "Address Line 2"})
 
-    submit = SubmitField(_l('Accept Changes'))
+    accept = SubmitField(_l('Accept Changes'))

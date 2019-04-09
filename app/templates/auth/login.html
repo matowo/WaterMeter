@@ -2,29 +2,22 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block app_content %}
-    <div class="container-min-full-height d-flex justify-content-center align-items-center container-fluid">
-            <div class="login-center">
-            
-                <div>
-                    {{ wtf.quick_form(form) }}
-                    <div class="form-group no-gutters mb-0">
-                        <div class="col-md-12 d-flex">
-                            <div class="checkbox checkbox-primary mr-auto mr-0-rtl ml-auto-rtl">
-                            </div><a href="{{ url_for('auth.reset_password_request') }}" id="to-recover" class="my-auto pb-2 text-right"><i class="material-icons mr-2 fs-18">lock</i> Forgot Password?</a>
-                        </div>
-                        <!-- /.col-md-12 -->
-                    </div>
-                    <!-- /.form-group -->
-                </div>
-                <!-- /.form-material -->
+    <div class="container-min-full-height d-flex justify-content-center align-items-center container">
+        <div class="login-center">
 
-                <footer class="col-sm-12 text-center">
-                    <hr />
-                    <p>Don't have an account? <a href="{{ url_for('auth.register') }}" class="text-primary m-l-5"><b>Sign Up</b></a>
-                    </p>
-                </footer>
+            <!-- /.navbar-header -->
+            <div>
+                {{ wtf.quick_form(form) }}
             </div>
-            <!-- /.login-center -->
+            <!-- /.form-material -->
+
+            <footer class="col-sm-12 text-center">
+                <hr/>
+                <p>New Member <a href="{{ url_for('auth.register') }}" class="text-primary m-l-5"><b>Register</b></a>
+                </p>
+            </footer>
         </div>
+        <!-- /.login-center -->
+    </div>
 {% endblock %}
 

@@ -8,14 +8,16 @@ from flask import render_template, flash, redirect, url_for, request, \
 from flask_babel import _, get_locale
 from flask_login import current_user, login_required
 from app import db, marshmallow
-from app.models import User, UserSchema
+from app.models import User
 from app.api import bp
 
 
 
 @bp.route('/user-data/<string:token>', methods=['GET'])
 def user_data(token):
-    pass
+    user = User.query.filter_by(secure_token=token).first()
+
+    return jsonify(user.to_dict())
 
 @bp.route('/users', methods=['GET'])
 def users():
@@ -25,6 +27,6 @@ def users():
     return jsonify(result.data)
 
 
-@bp.route('/update-data/<string:token>', methods=['POST'])
-def update_data(token):
+@bp.route('/update-data/<string:token>/<string:user_token>', methods=['POST'])
+def update_data(token, user_token):
     pass

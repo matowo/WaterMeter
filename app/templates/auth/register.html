@@ -2,26 +2,22 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block app_content %}
-    <div class="container-min-full-height d-flex justify-content-center align-items-center container-fluid">
-            <div class="login-center">
-                <div class="navbar-header text-center mt-2 mb-4">
-                    <a href="{{ url_for('main.index') }}">
-                        <img style="height: 150px" alt="" src="{{ url_for('static', filename='pivot/pivot-4.png') }}" />
-                    </a>
-                </div>
-                <!-- /.navbar-header -->
-                <div>
-                    {{ wtf.quick_form(form) }}
-                </div>
-                <!-- /.form-material -->
+    <div class="container-min-full-height d-flex justify-content-center align-items-center container">
+        <div class="login-center">
 
-                <footer class="col-sm-12 text-center">
-                    <hr />
-                    <p>Have an account? <a href="{{ url_for('auth.login') }}" class="text-primary m-l-5"><b>Sign In</b></a>
-                    </p>
-                </footer>
+            <!-- /.navbar-header -->
+            <div>
+                {{ wtf.quick_form(form) }}
             </div>
-            <!-- /.login-center -->
+            <!-- /.form-material -->
+
+            <footer class="col-sm-12 text-center">
+                <hr/>
+                <p>Have an account? <a href="{{ url_for('auth.login') }}" class="text-primary m-l-5"><b>Sign In</b></a>
+                </p>
+            </footer>
         </div>
+        <!-- /.login-center -->
+    </div>
 {% endblock %}
 

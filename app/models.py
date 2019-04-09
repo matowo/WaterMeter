@@ -60,6 +60,27 @@ class User(UserMixin, db.Model):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
+    def to_dict(self):
+        data = {
+            'username': self.username,
+            'secure_token': self.secure_token,
+            'meters': [],
+            'balance': 0.00
+        }
+
+        for meter in self.meters:
+            dict = {
+                "id": meter.id,
+                "secure_token": meter.secure_token,
+            }
+            data['meters'].append(dict)
+
+        for balance in self.balance:
+            value = balance.balance
+            data['balance'] = value
+        return data
+
+
 
 class BillingAddress(db.Model):
     __tablename__ = 'billing'
@@ -75,7 +96,7 @@ class Balance(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     secure_token = db.Column(db.String(128), index=True)
-    balance = db.Column(db.Float)
+    balance = db.Column(db.Float, default=0.00)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
 
@@ -153,10 +174,20 @@ def load_user(id):
 """
 #--- User Schema --- #
 """
+class MeterSchema(marshmallow.ModelSchema):
+    class Meta:
+        model = Meter
+        fields = ('id', 'secure_token')
+        sqla_session = db.session
 
 class UserSchema(marshmallow.ModelSchema):
+
     class Meta:
         model = User
+
+        fields = ('id', 'secure_token', 'balance', 'email')
         sqla_session = db.session
+
+
 
 
