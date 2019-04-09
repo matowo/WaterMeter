@@ -8,7 +8,7 @@ from flask import render_template, flash, redirect, url_for, request, \
 from flask_babel import _, get_locale
 from flask_login import current_user, login_required
 from app import db, marshmallow
-from app.models import User
+from app.models import User, UserSchema
 from app.api import bp
 
 
